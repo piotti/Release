@@ -4,12 +4,12 @@ using System;
 class DBTest {
 
     public static void Main() {
-        var connString = "Host=localhost;Username=postgres;Password=JensenRobot321;Database=robot_info";
+        var connString = "Host=localhost;Username=postgres;Password=JensenRobot321;Database=postgres";
 
         using (var conn = new NpgsqlConnection(connString))
         {
             conn.Open();
-
+            /*
             // Insert some data
             using (var cmd = new NpgsqlCommand())
             {
@@ -17,6 +17,7 @@ class DBTest {
                 cmd.CommandText = Console.ReadLine();
                 cmd.ExecuteNonQuery();
             }
+
 
             // Retrieve all rows
             Console.WriteLine("pres_1:");
@@ -31,7 +32,9 @@ class DBTest {
                 while (reader.Read())
                     Console.WriteLine(reader.GetString(0));
 
+            */
 
+            conn.Close();
         }
 
     }  
